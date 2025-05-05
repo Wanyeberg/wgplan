@@ -1,0 +1,201 @@
+/* Whiteboard Styles */
+:root {
+    --note-yellow: #fff8b8;
+    --note-blue: #d1e5f7;
+    --note-green: #d4f8d4;
+    --note-pink: #ffd1e3;
+    --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.whiteboard-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.whiteboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.whiteboard-header h2 {
+    margin-bottom: 10px;
+}
+
+.whiteboard-header p {
+    color: var(--gray-color);
+}
+
+.add-item-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.add-item-form input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.add-item-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.add-item-form select {
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.add-item-form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.whiteboard {
+    min-height: 500px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    align-items: start;
+}
+
+.sticky-note {
+    background-color: var(--note-yellow);
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: var(--shadow-light);
+    cursor: move;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sticky-note:hover {
+    transform: translateY(-5px) rotate(1deg);
+    box-shadow: var(--shadow-medium);
+    z-index: 10;
+}
+
+.sticky-note.einkauf {
+    background-color: var(--note-yellow);
+}
+
+.sticky-note.haushalt {
+    background-color: var(--note-blue);
+}
+
+.sticky-note.idee {
+    background-color: var(--note-green);
+}
+
+.sticky-note.sonstiges {
+    background-color: var(--note-pink);
+}
+
+.note-content {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    margin-bottom: 15px;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.note-category {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.7rem;
+    padding: 3px 6px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.note-date {
+    font-style: italic;
+}
+
+.delete-note {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.sticky-note:hover .delete-note {
+    opacity: 1;
+}
+
+.delete-note:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.whiteboard-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .add-item-form {
+        flex-direction: column;
+    }
+    
+    .add-item-form input, 
+    .add-item-form select, 
+    .add-item-form button {
+        width: 100%;
+    }
+    
+    .whiteboard {
+        grid-template-columns: 1fr;
+    }
+}

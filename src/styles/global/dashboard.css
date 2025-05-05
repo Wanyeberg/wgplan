@@ -1,0 +1,76 @@
+/* Dashboard Styles */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.widgets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.widget {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    min-height: 120px;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.widget-icon {
+    font-size: 2.5rem;
+    margin-right: 20px;
+    color: #3498db;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: 50%;
+}
+
+.widget-content {
+    flex: 1;
+}
+
+.widget-content h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.widget-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.widget-placeholder {
+    background-color: #f8f9fa;
+    border: 2px dashed #ddd;
+    opacity: 0.7;
+}
+
+.widget-placeholder .widget-icon {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .widgets-container {
+        grid-template-columns: 1fr;
+    }
+}

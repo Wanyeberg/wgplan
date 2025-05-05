@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WG Dashboard</title>
+    <link rel="stylesheet" href="../styles/global/style.css">
+    <link rel="stylesheet" href="../styles/global/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>WG Dashboard</h1>
+        
+        <div class="widgets-container">
+            <!-- Haushaltsplan Widget -->
+            <div class="widget" onclick="window.location.href='haushaltsplan.html'">
+                <div class="widget-icon">
+                    <i class="fa-tasks">📋</i>
+                </div>
+                <div class="widget-content">
+                    <h3>Haushaltsplan</h3>
+                    <p>Wöchentliche, monatliche und saisonale Aufgaben verwalten</p>
+                </div>
+            </div>
+            
+            <!-- Brauchen wir noch Widget -->
+            <div class="widget" onclick="window.location.href='brauchen-wir-noch.html'">
+                <div class="widget-icon">
+                    <i class="fa-shopping-cart">🛒</i>
+                </div>
+                <div class="widget-content">
+                    <h3>Brauchen wir noch</h3>
+                    <p>Ideen und Einkaufsliste für die WG</p>
+                </div>
+            </div>
+            
+            <!-- Platzhalter für weitere Widgets -->
+            <div class="widget widget-placeholder">
+                <div class="widget-icon">
+                    <i class="fa-plus">➕</i>
+                </div>
+                <div class="widget-content">
+                    <h3>Neues Widget</h3>
+                    <p>Hier könnte dein nächstes Widget stehen</p>
+                </div>
+            </div>
+            
+            <div class="widget widget-placeholder">
+                <div class="widget-icon">
+                    <i class="fa-plus">➕</i>
+                </div>
+                <div class="widget-content">
+                    <h3>Neues Widget</h3>
+                    <p>Hier könnte dein nächstes Widget stehen</p>
+                </div>
+            </div>
+            
+            <div class="widget widget-placeholder">
+                <div class="widget-icon">
+                    <i class="fa-plus">➕</i>
+                </div>
+                <div class="widget-content">
+                    <h3>Neues Widget</h3>
+                    <p>Hier könnte dein nächstes Widget stehen</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/components/dashboard.js"></script>
+</body>
+</html>

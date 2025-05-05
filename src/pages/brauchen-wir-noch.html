@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brauchen wir noch - WG Dashboard</title>
+    <link rel="stylesheet" href="../styles/global/style.css">
+    <link rel="stylesheet" href="../styles/global/whiteboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Brauchen wir noch</h1>
+        
+        <div class="navigation">
+            <button id="backToHome" onclick="window.location.href='index.html'">← Zurück zur Startseite</button>
+        </div>
+        
+        <div class="whiteboard-container">
+            <div class="whiteboard-header">
+                <h2>WG Whiteboard</h2>
+                <p>Hier könnt ihr Ideen und Dinge notieren, die wir noch besorgen sollten</p>
+            </div>
+            
+            <div class="add-item-form">
+                <input type="text" id="newItemText" placeholder="Neuer Eintrag..." maxlength="100">
+                <select id="itemCategory">
+                    <option value="einkauf">Einkauf</option>
+                    <option value="haushalt">Haushalt</option>
+                    <option value="idee">Idee</option>
+                    <option value="sonstiges">Sonstiges</option>
+                </select>
+                <button id="addItemBtn">Hinzufügen</button>
+            </div>
+            
+            <div class="whiteboard" id="whiteboard">
+                <!-- Hier werden die Notizen dynamisch eingefügt -->
+            </div>
+            
+            <div class="whiteboard-footer">
+                <button id="clearAllBtn" class="reset-btn">Alle löschen</button>
+                <div class="note">* Ziehe die Notizen mit der Maus, um sie zu verschieben</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <!-- Unsere Scripts -->
+    <script src="../js/services/firebase-config.js"></script>
+    <script src="../js/components/whiteboard.js"></script>
+</body>
+</html>

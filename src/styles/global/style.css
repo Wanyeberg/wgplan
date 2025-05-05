@@ -1,0 +1,218 @@
+/* Modern Haushaltsplan Styles */
+:root {
+    --primary-color: #4361ee;
+    --primary-light: #e9efff;
+    --secondary-color: #3a0ca3;
+    --accent-color: #f72585;
+    --success-color: #4cc9f0;
+    --warning-color: #f8961e;
+    --danger-color: #f94144;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --border-radius: 12px;
+    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: var(--secondary-color);
+    text-align: center;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    padding-top: 1rem;
+}
+
+.date-display {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 25px 0;
+    padding: 15px;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.tasks-table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.tasks-table th, .tasks-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.tasks-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.tasks-table tr:last-child td {
+    border-bottom: none;
+}
+
+.tasks-table tr:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.tasks-table tr:nth-child(even) {
+    background-color: rgba(248, 249, 250, 0.7);
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.checkbox:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox:checked::after {
+    content: '\2714';
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: var(--gray-color);
+    background-color: rgba(248, 249, 250, 0.5) !important;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    gap: 15px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(67, 97, 238, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(67, 97, 238, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.reset-btn {
+    background-color: var(--danger-color);
+    box-shadow: 0 4px 6px rgba(249, 65, 68, 0.2);
+}
+
+.reset-btn:hover {
+    background-color: #e41b23;
+    box-shadow: 0 6px 8px rgba(249, 65, 68, 0.25);
+}
+
+.section {
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.note {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    margin-top: 12px;
+    padding-left: 10px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.seasonal-task {
+    background-color: rgba(76, 201, 240, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    .navigation {
+        flex-direction: column;
+    }
+    
+    .tasks-table th, .tasks-table td {
+        padding: 12px 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
